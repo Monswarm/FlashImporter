@@ -1,0 +1,1455 @@
+{
+    "ANIMATION": {
+        "name": "flashImporterExample",
+        "StageInstance": {
+            "SYMBOL_Instance": {
+                "SYMBOL_name": "Cat",
+                "Instance_Name": "",
+                "symbolType": "movieclip",
+                "transformationPoint": {
+                    "x": 79.85,
+                    "y": 142.95
+                },
+                "Matrix3D": {
+                    "m00": 1,
+                    "m01": 0,
+                    "m02": 0,
+                    "m03": 0,
+                    "m10": 0,
+                    "m11": 1,
+                    "m12": 0,
+                    "m13": 0,
+                    "m20": 0,
+                    "m21": 0,
+                    "m22": 1,
+                    "m23": 0,
+                    "m30": 738.65,
+                    "m31": 489.35,
+                    "m32": 0,
+                    "m33": 1
+                },
+                "DecomposedMatrix": {
+                    "Position": {
+                        "x": 738.65,
+                        "y": 489.35,
+                        "z": 0
+                    },
+                    "Rotation": {
+                        "x": 0,
+                        "y": -0,
+                        "z": 0
+                    },
+                    "Scaling": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    }
+                }
+            }
+        },
+        "SYMBOL_name": "Cat",
+        "TIMELINE": {
+            "LAYERS": [
+                {
+                    "Layer_name": "hats",
+                    "Frames": []
+                },
+                {
+                    "Layer_name": "hat_classic",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0000",
+                                        "Position": {
+                                            "x": 37,
+                                            "y": -56
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0001",
+                                        "Position": {
+                                            "x": 37,
+                                            "y": -56
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0002",
+                                        "Position": {
+                                            "x": 37,
+                                            "y": -56
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0003",
+                                        "Position": {
+                                            "x": 37,
+                                            "y": -56
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0004",
+                                        "Position": {
+                                            "x": 37,
+                                            "y": -56
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "hat_brain",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0005",
+                                        "Position": {
+                                            "x": 33,
+                                            "y": -48
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0006",
+                                        "Position": {
+                                            "x": 33,
+                                            "y": -48
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0007",
+                                        "Position": {
+                                            "x": 33,
+                                            "y": -48
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0008",
+                                        "Position": {
+                                            "x": 33,
+                                            "y": -48
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0009",
+                                        "Position": {
+                                            "x": 33,
+                                            "y": -48
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "head",
+                    "Frames": []
+                },
+                {
+                    "Layer_name": "eyes",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0010",
+                                        "Position": {
+                                            "x": 53,
+                                            "y": 32
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0011",
+                                        "Position": {
+                                            "x": 42,
+                                            "y": 15
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0012",
+                                        "Position": {
+                                            "x": 42,
+                                            "y": 15
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "face",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0013",
+                                        "Position": {
+                                            "x": 40,
+                                            "y": 47
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0014",
+                                        "Position": {
+                                            "x": 40,
+                                            "y": 47
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0015",
+                                        "Position": {
+                                            "x": 48,
+                                            "y": 25
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "ears",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0016",
+                                        "Position": {
+                                            "x": 12,
+                                            "y": 4
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0017",
+                                        "Position": {
+                                            "x": 12,
+                                            "y": 4
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0018",
+                                        "Position": {
+                                            "x": 12,
+                                            "y": 4
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0019",
+                                        "Position": {
+                                            "x": 12,
+                                            "y": 4
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0020",
+                                        "Position": {
+                                            "x": 12,
+                                            "y": 4
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "head",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0021",
+                                        "Position": {
+                                            "x": 5,
+                                            "y": 8
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0021",
+                                        "Position": {
+                                            "x": 5,
+                                            "y": 8
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0021",
+                                        "Position": {
+                                            "x": 5,
+                                            "y": 8
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0021",
+                                        "Position": {
+                                            "x": 5,
+                                            "y": 8
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0021",
+                                        "Position": {
+                                            "x": 5,
+                                            "y": 8
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "neck",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0022",
+                                        "Position": {
+                                            "x": 54,
+                                            "y": 69
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0023",
+                                        "Position": {
+                                            "x": 54,
+                                            "y": 69
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0024",
+                                        "Position": {
+                                            "x": 54,
+                                            "y": 69
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0025",
+                                        "Position": {
+                                            "x": 54,
+                                            "y": 69
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0026",
+                                        "Position": {
+                                            "x": 54,
+                                            "y": 69
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "Body",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0027",
+                                        "Position": {
+                                            "x": 38,
+                                            "y": 91
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0028",
+                                        "Position": {
+                                            "x": 38,
+                                            "y": 91
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0029",
+                                        "Position": {
+                                            "x": 38,
+                                            "y": 91
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0030",
+                                        "Position": {
+                                            "x": 38,
+                                            "y": 91
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0031",
+                                        "Position": {
+                                            "x": 38,
+                                            "y": 91
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "arms",
+                    "Frames": []
+                },
+                {
+                    "Layer_name": "lArmDown",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0032",
+                                        "Position": {
+                                            "x": 7,
+                                            "y": 135
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0032",
+                                        "Position": {
+                                            "x": 7,
+                                            "y": 135
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0032",
+                                        "Position": {
+                                            "x": 7,
+                                            "y": 135
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0032",
+                                        "Position": {
+                                            "x": 7,
+                                            "y": 135
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0032",
+                                        "Position": {
+                                            "x": 7,
+                                            "y": 135
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "lArmUp",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0033",
+                                        "Position": {
+                                            "x": 10,
+                                            "y": 104
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0034",
+                                        "Position": {
+                                            "x": 10,
+                                            "y": 104
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0035",
+                                        "Position": {
+                                            "x": 10,
+                                            "y": 104
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0036",
+                                        "Position": {
+                                            "x": 10,
+                                            "y": 104
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0037",
+                                        "Position": {
+                                            "x": 10,
+                                            "y": 104
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "rArmDown",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0038",
+                                        "Position": {
+                                            "x": 128,
+                                            "y": 133
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0038",
+                                        "Position": {
+                                            "x": 128,
+                                            "y": 133
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0038",
+                                        "Position": {
+                                            "x": 128,
+                                            "y": 133
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0038",
+                                        "Position": {
+                                            "x": 128,
+                                            "y": 133
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0038",
+                                        "Position": {
+                                            "x": 128,
+                                            "y": 133
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "rArmUp",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0039",
+                                        "Position": {
+                                            "x": 116,
+                                            "y": 101
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0040",
+                                        "Position": {
+                                            "x": 116,
+                                            "y": 101
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0041",
+                                        "Position": {
+                                            "x": 116,
+                                            "y": 101
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0042",
+                                        "Position": {
+                                            "x": 116,
+                                            "y": 101
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0043",
+                                        "Position": {
+                                            "x": 116,
+                                            "y": 101
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "shoulder_l",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0044",
+                                        "Position": {
+                                            "x": 33,
+                                            "y": 96
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0045",
+                                        "Position": {
+                                            "x": 33,
+                                            "y": 96
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0046",
+                                        "Position": {
+                                            "x": 33,
+                                            "y": 96
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0047",
+                                        "Position": {
+                                            "x": 33,
+                                            "y": 96
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0048",
+                                        "Position": {
+                                            "x": 33,
+                                            "y": 96
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "shoulder_r",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0049",
+                                        "Position": {
+                                            "x": 104,
+                                            "y": 94
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0050",
+                                        "Position": {
+                                            "x": 104,
+                                            "y": 94
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0051",
+                                        "Position": {
+                                            "x": 104,
+                                            "y": 94
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0052",
+                                        "Position": {
+                                            "x": 104,
+                                            "y": 94
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0053",
+                                        "Position": {
+                                            "x": 104,
+                                            "y": 94
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "legs",
+                    "Frames": []
+                },
+                {
+                    "Layer_name": "foot_r",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0054",
+                                        "Position": {
+                                            "x": 95,
+                                            "y": 241
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0055",
+                                        "Position": {
+                                            "x": 95,
+                                            "y": 241
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0056",
+                                        "Position": {
+                                            "x": 95,
+                                            "y": 241
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0057",
+                                        "Position": {
+                                            "x": 95,
+                                            "y": 241
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0058",
+                                        "Position": {
+                                            "x": 95,
+                                            "y": 241
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "leg_r",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0059",
+                                        "Position": {
+                                            "x": 85,
+                                            "y": 211
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0059",
+                                        "Position": {
+                                            "x": 85,
+                                            "y": 211
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0059",
+                                        "Position": {
+                                            "x": 85,
+                                            "y": 211
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0059",
+                                        "Position": {
+                                            "x": 85,
+                                            "y": 211
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0059",
+                                        "Position": {
+                                            "x": 85,
+                                            "y": 211
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "foot_l",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0060",
+                                        "Position": {
+                                            "x": 45,
+                                            "y": 241
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0061",
+                                        "Position": {
+                                            "x": 45,
+                                            "y": 241
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0062",
+                                        "Position": {
+                                            "x": 45,
+                                            "y": 241
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0063",
+                                        "Position": {
+                                            "x": 45,
+                                            "y": 241
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0064",
+                                        "Position": {
+                                            "x": 45,
+                                            "y": 241
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Layer_name": "leg_l",
+                    "Frames": [
+                        {
+                            "index": 0,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0065",
+                                        "Position": {
+                                            "x": 44,
+                                            "y": 211
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 1,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0065",
+                                        "Position": {
+                                            "x": 44,
+                                            "y": 211
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0065",
+                                        "Position": {
+                                            "x": 44,
+                                            "y": 211
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 3,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0065",
+                                        "Position": {
+                                            "x": 44,
+                                            "y": 211
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "index": 4,
+                            "duration": 1,
+                            "elements": [
+                                {
+                                    "ATLAS_SPRITE_instance": {
+                                        "name": "0065",
+                                        "Position": {
+                                            "x": 44,
+                                            "y": 211
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "metadata": {
+        "framerate": 24
+    }
+}
