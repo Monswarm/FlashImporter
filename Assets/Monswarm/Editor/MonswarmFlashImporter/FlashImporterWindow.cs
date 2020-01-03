@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using AssetUsageDetectorNamespace.Extras;
 using UnityEditor;
 using UnityEngine;
 using static Monswarm.Editor.MonswarmFlashImporter.JSONAtlas;
+using Debug = UnityEngine.Debug;
 
 namespace Monswarm.Editor.MonswarmFlashImporter
 {
@@ -16,6 +19,9 @@ namespace Monswarm.Editor.MonswarmFlashImporter
         private string _spriteAssetPath;
         private TextAsset _layersInfoAsset;
         private bool _removeDuplicatedImages = true;
+        private bool _moveFlashFiles = true;
+        private string _flashFolderName = "AtlasFlashFiles";
+        private string _flashFolderNamePath;
         private bool _debugLog = false;
         private bool _renameFiles = false;
         private string _fileNameBase;
@@ -44,6 +50,7 @@ namespace Monswarm.Editor.MonswarmFlashImporter
             GUILayout.Space(_logoHeight + logoMargin);
             GuiTextureSection();
             GuiSpritesheetInfoSection();
+            GUIExportOptionsSection();
             GuiDebugResultSection();
         }
 
@@ -80,11 +87,57 @@ namespace Monswarm.Editor.MonswarmFlashImporter
         private void GuiTextureSection()
         {
             GUILayout.Label("Texture", EditorStyles.boldLabel);
+
+            EditorGUI.BeginChangeCheck();
             Texture2D newSpriteSheet =
                 (Texture2D)EditorGUILayout.ObjectField("Sprite Sheet", spriteSheet, typeof(Texture2D), false);
             if (newSpriteSheet != null)
             {
                 spriteSheet = newSpriteSheet;
+            }
+            if (EditorGUI.EndChangeCheck())
+                SpriteSheetChanged();
+        }
+
+        /// <summary>
+        /// Called when a user changes the spritemap property.
+        /// This function tries to get the animation and spritemap JSON files and associated it with the correct property. Is a QoL function.
+        /// </summary>
+        private void SpriteSheetChanged()
+        {
+            // Clean JSON properties
+            _textAsset = null;
+            _textAssetPath = null;
+            _layersInfoAsset = null;
+            _layersInfoAssetPath = null;
+
+            //Find Animation and Spritemap files
+            string spritePath = AssetDatabase.GetAssetPath(spriteSheet);
+            spritePath = spritePath.Remove(spritePath.LastIndexOf("/", StringComparison.Ordinal));
+
+            FindJSONFile(spritePath, "spritemap.json", ref _textAsset, ref _textAssetPath);
+            FindJSONFile(spritePath, "Animation.json", ref _layersInfoAsset, ref _layersInfoAssetPath);
+        }
+
+
+        /// <summary>
+        /// Find the JSON file and assign it to the property in the editor window
+        /// </summary>
+        /// <param name="filePath">Root folder to search</param>
+        /// <param name="fileName">File to find</param>
+        /// <param name="propertyToAssignate">Property in the editor window that we want to change</param>
+        /// <param name="propertyPathToAssignate">Associated disk path from the property changed. This parameter will be used in other functions.</param>
+        private void FindJSONFile(string filePath, string fileName, ref TextAsset propertyToAssignate, ref string propertyPathToAssignate)
+        {
+            string fullFilePath = filePath + "/" + fileName;
+
+            propertyToAssignate = (TextAsset)AssetDatabase.LoadAssetAtPath(filePath + "/" + fileName, typeof(TextAsset));
+            if (propertyToAssignate != null)
+                propertyPathToAssignate = AssetDatabase.GetAssetPath(propertyToAssignate);
+            else
+            {
+                DebugLog(fileName + " file not found");
+                fullFilePath = null;
             }
         }
 
@@ -100,12 +153,27 @@ namespace Monswarm.Editor.MonswarmFlashImporter
             _layersInfoAsset =
                 (TextAsset)EditorGUILayout.ObjectField("Animation JSON", _layersInfoAsset, typeof(TextAsset), false);
             _layersInfoAssetPath = AssetDatabase.GetAssetPath(_layersInfoAsset);
+        }
+
+        /// <summary>
+        /// Export options section.
+        /// </summary>
+        private void GUIExportOptionsSection()
+        {
+            GUILayout.Label("Export options", EditorStyles.boldLabel);
 
             _removeDuplicatedImages = EditorGUILayout.Toggle("Remove duplicated images", _removeDuplicatedImages);
-            _debugLog = EditorGUILayout.Toggle("Display debug information", _debugLog);
 
             _renameFiles = EditorGUILayout.Toggle("Rename files?", _renameFiles);
-            _fileNameBase = EditorGUILayout.TextField("File name base: ", _fileNameBase);
+            if (_renameFiles)
+            {
+                _fileNameBase = EditorGUILayout.TextField("File name base: ", _fileNameBase);
+                _moveFlashFiles = EditorGUILayout.Toggle("Move Flash files?", _moveFlashFiles);
+                if (_moveFlashFiles)
+                    _flashFolderName = EditorGUILayout.TextField("Flash folder name: ", _flashFolderName);
+            }
+
+            _debugLog = EditorGUILayout.Toggle("Display debug information", _debugLog);
         }
 
         /// <summary>
@@ -130,9 +198,7 @@ namespace Monswarm.Editor.MonswarmFlashImporter
                         Debug.LogError("Failed to import sprite sheet");
 
                     if (_renameFiles)
-                    {
                         RenameAllFiles();
-                    }
                 }
             }
             else
@@ -142,18 +208,34 @@ namespace Monswarm.Editor.MonswarmFlashImporter
             }
         }
 
-
         /// <summary>
         /// Call the rename file procedure for all the files acceded by the tool
         /// </summary>
         private void RenameAllFiles()
         {
-            RenameFile(_textAssetPath, "Sheet");
-            RenameFile(_layersInfoAssetPath, "Anim");
-            RenameFile(_spriteAssetPath, "Sprite");
+            CreateFlashFolder();
+
+            RenameFile(_textAssetPath, "Sheet", _moveFlashFiles);
+            RenameFile(_layersInfoAssetPath, "Anim", _moveFlashFiles);
+            RenameFile(_spriteAssetPath, "Sprite", false);
 
             // We have to force Unity to refresh the Asset Database in order to synchronize the Project window
             AssetDatabase.Refresh();
+        }
+
+        /// <summary>
+        /// Obtain the path where the sprite is located and create the flash folder
+        /// </summary>
+        private void CreateFlashFolder()
+        {
+            if (_moveFlashFiles)
+            {
+                // Obtain the root folder of the sprite. In this folder we will create a folder for the flash files
+                string spritePath = AssetDatabase.GetAssetPath(spriteSheet);
+                spritePath = spritePath.Remove(spritePath.LastIndexOf("/", StringComparison.Ordinal));
+                _flashFolderNamePath = spritePath.ToString().Replace('\\', '/') + "/" + _flashFolderName;
+                System.IO.Directory.CreateDirectory(_flashFolderNamePath);
+            }
         }
 
         /// <summary>
@@ -162,7 +244,7 @@ namespace Monswarm.Editor.MonswarmFlashImporter
         /// </summary>
         /// <param name="filePath">Original file path</param>
         /// <param name="suffix">Suffix to be applied, usually: "Sheet" for spritmap.json. "Anim" for animation.json. "Sprite" for texture.</param>
-        private void RenameFile(string filePath, string suffix)
+        private void RenameFile(string filePath, string suffix, bool moveToFlashFolder)
         {
             string finalPath = filePath;
             string extension = Path.GetExtension(filePath);
@@ -172,14 +254,19 @@ namespace Monswarm.Editor.MonswarmFlashImporter
 
             finalPath = finalPath.Remove(baseIndex);
             finalPath += fileName;
-
-            FileUtil.MoveFileOrDirectory(filePath, finalPath);
+            if (moveToFlashFolder)
+                FileUtil.MoveFileOrDirectory(filePath, _flashFolderNamePath + "/" + fileName);
+            else
+                FileUtil.MoveFileOrDirectory(filePath, finalPath);
 
             // Move meta files too
             // This is needed to avoid loosing the sprite split
             filePath += ".meta";
             finalPath += ".meta";
-            FileUtil.MoveFileOrDirectory(filePath, finalPath);
+            if (moveToFlashFolder)
+                FileUtil.MoveFileOrDirectory(filePath, _flashFolderNamePath + "/" + fileName + ".meta");
+            else
+                FileUtil.MoveFileOrDirectory(filePath, finalPath);
         }
 
         /// <summary>
@@ -233,8 +320,7 @@ namespace Monswarm.Editor.MonswarmFlashImporter
             }
             
             _symbolName = layersinfojson.ANIMATION.SYMBOL_name;
-            if (_debugLog)
-                Debug.Log("Symbol name: " + _symbolName);
+            DebugLog("Symbol name: " + _symbolName);
 
             foreach (JSONAnimation.LayersInfoLayers layersInfo in layersinfojson.ANIMATION.TIMELINE.LAYERS)
             {
@@ -247,8 +333,7 @@ namespace Monswarm.Editor.MonswarmFlashImporter
                 }
                 else
                 {
-                    if (_debugLog)
-                        Debug.Log("Layer detected: " + layerName);
+                    DebugLog("Layer detected: " + layerName);
 
                     int frameCount = 0;
                     foreach (JSONAnimation.LayersInfoFrames frame in frames)
@@ -338,6 +423,16 @@ namespace Monswarm.Editor.MonswarmFlashImporter
             texture.Apply(true);
 
             return true;
+        }
+
+        /// <summary>
+        /// Debug a message taking in consideration the Debug flag
+        /// </summary>
+        /// <param name="message"></param>
+        private void DebugLog(string message)
+        {
+            if (_debugLog)
+                Debug.Log(message);
         }
 
         /// <summary>
