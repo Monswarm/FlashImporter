@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -11,11 +12,13 @@ namespace Monswarm.Editor.MonswarmFlashImporter
         private Texture2D spriteSheet;
         private TextAsset _textAsset;
         private string _textAssetPath;
-        private TextAsset _layersInfoAsset;
         private string _layersInfoAssetPath;
-        private string _spriteSheetPath;
+        private string _spriteAssetPath;
+        private TextAsset _layersInfoAsset;
         private bool _removeDuplicatedImages = true;
         private bool _debugLog = false;
+        private bool _renameFiles = false;
+        private string _fileNameBase;
 
         private string _symbolName;
         private Dictionary<string, string> _layersDictionary = null;
@@ -100,6 +103,9 @@ namespace Monswarm.Editor.MonswarmFlashImporter
 
             _removeDuplicatedImages = EditorGUILayout.Toggle("Remove duplicated images", _removeDuplicatedImages);
             _debugLog = EditorGUILayout.Toggle("Display debug information", _debugLog);
+
+            _renameFiles = EditorGUILayout.Toggle("Rename files?", _renameFiles);
+            _fileNameBase = EditorGUILayout.TextField("File name base: ", _fileNameBase);
         }
 
         /// <summary>
@@ -122,6 +128,11 @@ namespace Monswarm.Editor.MonswarmFlashImporter
                     result = ParseAtlasInformation();
                     if (!result)
                         Debug.LogError("Failed to import sprite sheet");
+
+                    if (_renameFiles)
+                    {
+                        RenameAllFiles();
+                    }
                 }
             }
             else
@@ -130,7 +141,47 @@ namespace Monswarm.Editor.MonswarmFlashImporter
                 GUILayout.Label("Please select a sprite sheet and text asset to import sprite sheet", EditorStyles.helpBox);
             }
         }
-        
+
+
+        /// <summary>
+        /// Call the rename file procedure for all the files acceded by the tool
+        /// </summary>
+        private void RenameAllFiles()
+        {
+            RenameFile(_textAssetPath, "Sheet");
+            RenameFile(_layersInfoAssetPath, "Anim");
+            RenameFile(_spriteAssetPath, "Sprite");
+
+            // We have to force Unity to refresh the Asset Database in order to synchronize the Project window
+            AssetDatabase.Refresh();
+        }
+
+        /// <summary>
+        /// Rename a file and attach it the base name (added by the user in the tool window) + predefined suffix
+        /// Meta files are renamed too to avoid the sprite split to be reseted
+        /// </summary>
+        /// <param name="filePath">Original file path</param>
+        /// <param name="suffix">Suffix to be applied, usually: "Sheet" for spritmap.json. "Anim" for animation.json. "Sprite" for texture.</param>
+        private void RenameFile(string filePath, string suffix)
+        {
+            string finalPath = filePath;
+            string extension = Path.GetExtension(filePath);
+            string fileName = _fileNameBase + suffix + extension;
+            int baseIndex = filePath.LastIndexOf("/", StringComparison.Ordinal);
+            baseIndex++;
+
+            finalPath = finalPath.Remove(baseIndex);
+            finalPath += fileName;
+
+            FileUtil.MoveFileOrDirectory(filePath, finalPath);
+
+            // Move meta files too
+            // This is needed to avoid loosing the sprite split
+            filePath += ".meta";
+            finalPath += ".meta";
+            FileUtil.MoveFileOrDirectory(filePath, finalPath);
+        }
+
         /// <summary>
         /// This method gets the information about the folder where the script is in order to avoid errors when the folder is moved.
         /// </summary>
@@ -235,8 +286,8 @@ namespace Monswarm.Editor.MonswarmFlashImporter
 
 
             //Get texture image information
-            string texturePath = AssetDatabase.GetAssetPath(texture);
-            TextureImporter textureImport = AssetImporter.GetAtPath(texturePath) as TextureImporter;
+            _spriteAssetPath = AssetDatabase.GetAssetPath(texture);
+            TextureImporter textureImport = AssetImporter.GetAtPath(_spriteAssetPath) as TextureImporter;
             if (textureImport == null)
                 return false;
             textureImport.textureType = TextureImporterType.Sprite;
@@ -283,7 +334,7 @@ namespace Monswarm.Editor.MonswarmFlashImporter
             textureImport.spriteImportMode = SpriteImportMode.Multiple;
             textureImport.filterMode = FilterMode.Point;
             textureImport.spritePixelsPerUnit = 1;
-            AssetDatabase.ImportAsset(texturePath, ImportAssetOptions.ForceUpdate);
+            AssetDatabase.ImportAsset(_spriteAssetPath, ImportAssetOptions.ForceUpdate);
             texture.Apply(true);
 
             return true;
